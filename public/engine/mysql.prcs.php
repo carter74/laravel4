@@ -38,7 +38,7 @@ while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 
 if ($i == 0 && !$firstrowname){$firstrowname = $row[0];}
 
-if ($_REQUEST[mdf_ . $i] != $_REQUEST[copy_ . $i]){$newquery .= " SET ". $row[0] ." = '". $_REQUEST[mdf_ . $i] ."'";}
+if ($_REQUEST[mdf_ . $i] != $_REQUEST[copy_ . $i]){$newquery .= " SET ". $row[0] ." = '". $_REQUEST[mdf_ . $i] ."' ";}
 
 $i++;
 
@@ -46,9 +46,10 @@ $i++;
 
 if ($newquery){
 
-$mainquery  = "UPDATE ".$tbnm;
+$newquery    = preg_replace("/\, $/",'', $newquery);
+$mainquery  = "UPDATE ".$tbnm."";
 $mainquery .= $newquery;
-$mainquery .= " WHERE ".$firstrowname." = '".$mrwn."';";
+$mainquery .= " WHERE ".$firstrowname." = ".$mrwn.";";
 
 }
 

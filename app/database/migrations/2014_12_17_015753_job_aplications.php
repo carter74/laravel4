@@ -31,7 +31,7 @@ class JobAplications extends Migration {
             $tab->increments('id');
             $tab->string('firstlastname', 128);
             $tab->string('email', 128);
-            $tab->integer('notice');
+            $tab->string('notice', 128);
             $tab->text('education');
             $tab->text('experience');
             $tab->string('slug', 128);

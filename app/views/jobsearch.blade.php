@@ -16,8 +16,8 @@
 @foreach($results as $rslt)
 
 <li><font class=bigfont><b>{{ $rslt->title }}</b></font><br>
-<p>{{ $rslt->orgname }}</p>
-<p>{{ Str::limit($rslt->description, 50) }}</p>
+{{ $rslt->orgname }}<br>
+{{ Str::limit($rslt->description, 50) }}<br>
 <a href='{{ URL::action('get-job', $rslt->id) }}'>more info &raquo;</a><br><br>
 
 @endforeach

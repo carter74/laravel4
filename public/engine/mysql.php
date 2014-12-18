@@ -3,8 +3,6 @@
  require ("setup.inc.php");
  require ("mysql.lib.php");
 
-// mysql.php
-
 ##################################################################################
 #
 #   My personal engine to work with MySQL tables
