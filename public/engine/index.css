@@ -1,0 +1,92 @@
+<STYLE TYPE="TEXT/CSS">
+<!--
+
+BODY {
+color:#000000;
+font-family:Verdana,Helvetica,sans-serif,Tahoma,Arial;
+scrollbar-face-color: white;
+scrollbar-shadow-color: #5151FF;
+scrollbar-highlight-color: #5151FF;
+scrollbar-3dlight-color: white;
+scrollbar-darkshadow-color: white;
+scrollbar-track-color: white;
+scrollbar-arrow-color: #5151FF;
+}
+
+.forminput {
+BACKGROUND: #ffffff;
+BORDER-BOTTOM: #000000 1px solid;
+BORDER-LEFT: #000000 1px solid;
+BORDER-RIGHT: #000000 1px solid;
+BORDER-TOP: #000000 1px solid;
+COLOR: #000000;
+FONT-FAMILY: arial;
+FONT-SIZE: 12px;
+}
+
+.formcompact {
+BACKGROUND: #ffffff;
+BORDER-BOTTOM: #000000 1px solid;
+BORDER-LEFT: #000000 1px solid;
+BORDER-RIGHT: #000000 1px solid;
+BORDER-TOP: #000000 1px solid;
+COLOR: #000000;
+FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+FONT-SIZE: 9px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+-khtml-border-radius: 3px;
+border-radius: 3px;
+}
+
+a:link { text-decoration: none; color: blue; }
+a:active { text-decoration: none; color: blue; }
+a:visited { text-decoration: none; color: blue;  }
+a:hover { text-decoration: underline; color: black; }
+
+hr { background:#999999; color:#999999; width:100%; border:0px; height:1px; clear:both; }
+
+.ahrefbox {
+background-color:#DDDDDD;
+border:solid #AAAAAA 1px;
+padding-left: 7px;
+padding-right: 7px;
+padding-top: 1px;
+padding-bottom: 2px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+-khtml-border-radius: 4px;
+border-radius: 4px;
+}
+
+.sign {width:50%; height:1px; color:#999999}
+
+.redfont { text-decoration: none; color: red }
+.greenfont { text-decoration: none; color: green }
+.bluefont { text-decoration: none; color: blue }
+.blackfont { text-decoration: none; color: black }
+
+.blinkfont{text-decoration: blink;}
+
+.dbigfont {font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 20px;}
+.bigfont {font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 16px;}
+
+.readfont {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px;}
+.r12font {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+.rfont {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;}
+.mfont {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px;}
+
+.medfont {font-family: Helvetica, Verdana, Arial, sans-serif; font-size: 10px;}
+.mnfnt {font-family: Helvetica, Verdana, Arial, sans-serif; font-size: 10px;}
+.menufont {font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 11px;}
+.m2font {font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 11px;}
+.med2font {font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 10px;}
+.minfont {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px;}
+.minifont {font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 9px;}
+.littlefont {font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 7px;}
+
+.bold {font-weight: bold;}
+.boldital {font-weight: bold; font-style: oblique;}
+
+-->
+</style>

@@ -1,0 +1,33 @@
+Job board API
+=============
+Implement a RESTful API using Laravel 4 that lets you post, search, and apply for jobs.
+
+Spec
+====
+It should let you post vacancies.
+  Job posting required values:
+    * Title
+    * Organization name and email
+    * Salary
+    * Description
+
+It should let you view all job postings.
+
+It should let you search/filter job postings by title and organization.
+
+It should let you order job postings by date posted.
+
+It should let you apply for a job posting.
+  Job application required values:
+    * First and last name
+    * Email
+    * Notice period in days
+    * Education qualifications
+    * Work experience
+
+It should let you list all applications by job posting.
+
+Code
+====
+Please push your code to a public repository on Github or Bitbucket and send me the URL.
+
