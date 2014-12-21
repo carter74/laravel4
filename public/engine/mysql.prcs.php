@@ -38,7 +38,22 @@ while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 
 if ($i == 0 && !$firstrowname){$firstrowname = $row[0];}
 
-if ($_REQUEST[mdf_ . $i] != $_REQUEST[copy_ . $i]){$newquery .= " SET ". $row[0] ." = '". $_REQUEST[mdf_ . $i] ."' ";}
+if ($_REQUEST[mdf_ . $i] != $_REQUEST[copy_ . $i]){
+
+$master = $_REQUEST[mdf_ . $i];
+
+$master = str_replace("|","&#124;",$master);
+$master = str_replace("|",'',$master);
+$master = str_replace("\"","&quot;",$master);
+$master = str_replace("<","&lt;",$master);
+$master = str_replace(">","&gt;",$master);
+$master = str_replace("'","&apos;",$master);
+
+//$master = htmlentities(urlencode($master));
+
+$newquery .= $row[0] ." = '". $master ."', ";
+
+}
 
 $i++;
 
@@ -46,9 +61,11 @@ $i++;
 
 if ($newquery){
 
+
+
 $newquery    = preg_replace("/\, $/",'', $newquery);
 $mainquery  = "UPDATE ".$tbnm."";
-$mainquery .= $newquery;
+$mainquery .= " SET ".$newquery;
 $mainquery .= " WHERE ".$firstrowname." = ".$mrwn.";";
 
 }
@@ -143,53 +160,5 @@ if ($result){$sysmsg .= "Row removed successfuly.";
 mysql_close ($link);
 
 }
-
-/*
-
-INSERT INTO posts ('id', 'title', 'body', 'slug', 'enabled', 'created_at', 'updated_at') VALUES ('', 'Title 456', 'New cinema presents', '', '', '', '')
-
-list($th[date],$th[time],$th[filename],$th[username],$th[userid],$th[rt],$th[mtype],$th[subj],
-     $th[cl],$th[hd],$th[msglim],$th[imp],$th[comt],$th[community],$th[mode],$th[access],
-     $th[flooder],$th[accdeny]) = explode("|", $thrline);
-
-list($subj, $hsubj) = explode("\0", $subj); // check for hide elements
-
-list($hvt, $hvc, $hrg, $ryear, $vin) = explode("/", $hsubj);
-
-23 поля
-
-date VARCHAR(10),
-time VARCHAR(10),
-trid BIGINT(16),
-username VARCHAR(16),
-userid BIGINT(16),
-mtype CHAR(1),
-subj VARCHAR(256),
-msglimit INT(8),
-ontop BOOLEAN,
-closed BOOLEAN,
-hided BOOLEAN,
-important BOOLEAN,
-comtime VARCHAR(10),
-toptime VARCHAR(10),
-community SMALLINT,
-mode VARCHAR(8),
-access VARCHAR(12),
-flooder CHAR(1),
-accessdeny VARCHAR(256),
-
-mototype TINYINT,
-motoclass TINYINT,
-model VARCHAR(64)
-ccm TINYINT,
-year SMALLINT,
-price INT(16),
-located TINYINT,
-
-CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
-
-CREATE TABLE info (id BIGINT(16), date DATE, tmstmp BIGINT(16), subj VARCHAR(1024));
-
-*/
 
 ?>

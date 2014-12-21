@@ -7,7 +7,7 @@
 #
 #   My personal engine to work with MySQL tables
 #   gvozdevmax@gmail.com
-#   version: 1.1.16 (12.18.2014)
+#   version: 1.1.32 (12.21.2014)
 #
 ##################################################################################
 # get request
@@ -283,7 +283,7 @@ while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 
     echo "<tr bgcolor=#eeeeee>\n";
 
-if ($editrow != $row[0]){
+if ($row[0] && $editrow != $row[0]){
 
     echo "<td></td>";
 
@@ -296,7 +296,7 @@ if ($editrow != $row[0]){
     echo "<td>[<a href=\"". $sts[extpath] ."/mysql.php?dbnm=$dbnm&tbnm=$tbnm&editrow=". $row[0] ."\">";
     echo "edit</a>]</td>\n";
 
-} elseif ($editrow == $row[0]){
+} elseif ($row[0] && $editrow == $row[0]){
 
     echo "<tr style=\"background: #eeeeee; padding: 4px;\">";
     echo "<td><a name=\"". $row[0] ."\">\n";
@@ -309,7 +309,14 @@ if ($editrow != $row[0]){
 
     for ($i = 0; $i < count($row); $i++){
 
-    echo "<input type=hidden name=\"copy_$i\" value=\"". iconv("UTF-8", "WINDOWS-1251", $row[$i]) ."\">\n";
+    $master = str_replace("\"","&quot;", iconv("UTF-8", "WINDOWS-1251", $row[$i]));
+
+    $master = str_replace("<","&lt;",$master);
+    $master = str_replace(">","&gt;",$master);
+
+//    $master = htmlentities(urlencode($master));
+
+    echo "<input type=hidden name=\"copy_$i\" value=\"". $master ."\">\n";
 
     }
 
